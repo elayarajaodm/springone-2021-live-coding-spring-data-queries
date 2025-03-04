@@ -1,6 +1,8 @@
 package com.greglturnquist.springbootlearning;
 
+
 import org.springframework.data.annotation.CreatedDate;
+
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
@@ -19,7 +21,8 @@ public class Employee {
     @ManyToOne
     private Manager manager;
 
-    @CreatedDate private Date createDate;
+    @CreatedDate
+    private Date createDate;
 
 
     protected Employee() {

@@ -81,7 +81,7 @@ public class Manager {
         return "Manager{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", employees=" + getEmployeeNames() +
+//                ", employees=" + getEmployeeNames() +
                 '}';
     }
 }

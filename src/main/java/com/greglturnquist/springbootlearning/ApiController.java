@@ -1,6 +1,7 @@
 package com.greglturnquist.springbootlearning;
 
 import org.springframework.data.domain.Example;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,11 +25,11 @@ public class ApiController {
         return employeeRepository.findAll();
     }
 
-    @GetMapping("/api/employees/{id}")
-    Employee one(@PathVariable Long id) {
-        return employeeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Couldn't find anyone at '" + id + "'"));
-    }
+//    @GetMapping("/api/employees/{id}")
+//    Employee one(@PathVariable Long id) {
+//        return employeeRepository.findById(id)
+//                .orElseThrow(() -> new RuntimeException("Couldn't find anyone at '" + id + "'"));
+//    }
 
     @GetMapping("/api/employees/search/{partialMatch}")
     List<Employee> searchBasedOnName(@PathVariable String partialMatch) {
@@ -37,7 +38,7 @@ public class ApiController {
 
     @GetMapping("/api/employees/manager/{managerName}")
     List<Employee> searchBasedOnManager(@PathVariable String managerName) {
-        return employeeRepository.findByManagerName(managerName);
+        return employeeRepository.findByManagerNameManagerNameManagerNameManagerName(managerName, PageRequest.of(1, 20));
     }
 
     @GetMapping("/api/employees/search")
